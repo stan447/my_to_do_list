@@ -1,0 +1,240 @@
+/* Center the complete application and limit its width. */
+.app {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 60px;
+  color: #24304a;
+  text-align: left;
+}
+
+/* Style the header area. */
+.header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Style the small application name. */
+.app-name {
+  margin: 0 0 4px;
+  color: #6d7991;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Remove the default heading margin and set the title size. */
+.header h1 {
+  margin: 0;
+  color: #1f2a44;
+  font-size: 42px;
+  letter-spacing: -1px;
+}
+
+/* Place summary cards in three equal columns. */
+.summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+/* Style each individual summary card. */
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 12px;
+  border: 1px solid #e7ebf3;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(45, 67, 104, 0.07);
+}
+
+/* Make the summary number large and prominent. */
+.summary-card strong {
+  color: #263553;
+  font-size: 36px;
+  line-height: 1;
+}
+
+/* Style the label under each summary number. */
+.summary-card span {
+  margin-top: 9px;
+  color: #7a8498;
+  font-size: 15px;
+}
+
+/* Add spacing and card styling around the add-task form. */
+.add-task-section,
+.tasks-section {
+  margin-bottom: 26px;
+  padding: 20px;
+  border: 1px solid #e7ebf3;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(45, 67, 104, 0.07);
+}
+
+/* Style section headings. */
+.add-task-section h2,
+.tasks-section h2 {
+  margin: 0 0 14px;
+  color: #263553;
+  font-size: 20px;
+}
+
+/* Arrange the task input and add button in one row. */
+.add-task-form {
+  display: flex;
+  gap: 10px;
+}
+
+/* Style the task text input. */
+.add-task-form input {
+  flex: 1;
+  min-width: 0;
+  height: 46px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  border: 1px solid #dfe4ee;
+  border-radius: 8px;
+  background: #f9fafc;
+  color: #263553;
+  font: inherit;
+}
+
+/* Style the add-task button. */
+.add-task-form button {
+  height: 46px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 8px;
+  background: #4c73d9;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Arrange the filter buttons in a row. */
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+/* Style each filter button. */
+.filter-buttons button {
+  padding: 9px 15px;
+  border: 1px solid #dfe4ee;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #68738a;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Highlight the active filter button. */
+.filter-buttons button.active {
+  border-color: #4c73d9;
+  background: #edf2ff;
+  color: #315fc5;
+}
+
+/* Stack the task rows vertically. */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Create one bordered row for each task. */
+.task-item {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border: 1px solid #edf0f5;
+  border-radius: 9px;
+  background: #fbfcfe;
+}
+
+/* Give the checkbox a normal size. */
+.task-item input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+/* Style the displayed task name. */
+.task-name {
+  color: #33415f;
+  font-size: 16px;
+}
+
+/* Give both status labels shared badge styling. */
+.status {
+  min-width: 88px;
+  box-sizing: border-box;
+  padding: 6px 10px;
+  border-radius: 999px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Style completed task status labels. */
+.status.completed {
+  background: #e8f6ef;
+  color: #3a8261;
+}
+
+/* Style pending task status labels. */
+.status.pending {
+  background: #fff1dc;
+  color: #a36a18;
+}
+
+/* Adjust the layout on narrow screens. */
+@media (max-width: 600px) {
+  .app {
+    width: min(100% - 20px, 920px);
+    padding-top: 24px;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .summary {
+    gap: 8px;
+  }
+
+  .summary-card {
+    padding: 16px 6px;
+  }
+
+  .summary-card strong {
+    font-size: 28px;
+  }
+
+  .add-task-form {
+    flex-direction: column;
+  }
+
+  .add-task-form button {
+    width: 100%;
+  }
+
+  .task-item {
+    grid-template-columns: 22px 1fr;
+  }
+
+  .status {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
